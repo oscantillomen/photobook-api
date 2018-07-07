@@ -5,27 +5,17 @@ const {
 } = mongoose;
 
 const fields = {
-  photo_url: {
+  text: {
     type: String,
     required: true,
   },
-  description: {
-    type: String,
-    default: '',
-    trim: true,
-  },
-  location: {
-    type: String,
-    default: '',
-    trim: true,
-  },
 };
 
-const post = new Schema(fields, {
+const comment = new Schema(fields, {
   timestamps: true,
 });
 
 module.exports = {
-  Model: mongoose.model('post', post),
+  Model: mongoose.model('comment', comment),
   fields,
 };
